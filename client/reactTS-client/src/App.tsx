@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { execute, changeTemplate } from './script.js'
 import Editor from './components/Editor';
 
