@@ -54,13 +54,7 @@ const App = () => {
 								<div className="container">
 									<div className="field">
 										<div className="control">
-											<Editor
-												ref={editorElement}
-												code={code}
-												language={language}
-												theme={theme}
-											/>
-											<div className="select">
+										<div className="select">
 												<select
 													id="lang"
 													defaultValue="python3"
@@ -111,6 +105,16 @@ const App = () => {
 												</select>
 											</div>
 										</div>
+										<div >
+										<Editor
+												ref={editorElement}
+												code={code}
+												language={language}
+												theme={theme}
+											/>
+
+										</div>
+											
 									</div>
 									<div className="field">
 										<div className="control">
