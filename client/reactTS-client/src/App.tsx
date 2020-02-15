@@ -116,17 +116,6 @@ const App = () => {
 									</div>
 									<div className="field">
 										<div className="control">
-											<textarea
-												id="code"
-												className="textarea is-small is-family-code"
-												spellCheck="false"
-												rows={15}
-												defaultValue={defaultCode}
-											></textarea>
-										</div>
-									</div>
-									<div className="field">
-										<div className="control">
 											<button
 												id="execute"
 												className="button is-primary is-fullwidth"

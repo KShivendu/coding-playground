@@ -65,7 +65,8 @@ console.log("Hello World");
 `;
 	}
 
-	document.querySelector('#code').value = sampleCode;
+	// TODO: update starter code in monaco
+	// document.querySelector('#code').value = sampleCode;
 }
 
 //   const languageExample_URLS = [
