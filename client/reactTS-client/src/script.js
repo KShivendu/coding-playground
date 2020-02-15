@@ -23,14 +23,15 @@
           let parsed = JSON.parse(result);
           let status = "";
           let title = "";
-          if (parsed.status == "success") {
+          if (parsed.status === "success") {
             title = "Output";
             status = "is-success";
-          } else if (parsed.status == "error") {
+          } else if (parsed.status === "error") {
             title = "Error";
             status = "is-danger";
           }
           console.log(title, parsed.text, status);
+          document.querySelector("#output").innerHTML = parsed.text;
         });
       } else {
         console.log("Error!", "SERVER ERROR", "is-warning");

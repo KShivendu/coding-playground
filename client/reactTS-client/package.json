@@ -37,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "monaco-editor-webpack-plugin": "^1.8.2"
   }
 }
