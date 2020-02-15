@@ -1,12 +1,9 @@
-import React, { useRef, useState, createRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { execute, getTemplateCode } from './script.js';
 import Editor from './components/Editor';
-import { findDOMNode } from 'react-dom';
 // import './App.css';
 
-type theme = 'dark' | 'light';
-
-const code = `import re 
+const defaultCode = `import re 
 import socket    
 hostname = socket.gethostname()    
 IPAddr = socket.gethostbyname(hostname)    
@@ -21,18 +18,21 @@ def main():
 main()`;
 
 const App = () => {
-	let theme: theme = window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark';
-	let language = 'python';
-	let editorRef = createRef<Editor>();
-	let editor = editorRef.current;
+	let theme = window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark';
+	let [language, setLanguage] = useState('python');
+	let [code, setCode] = useState(defaultCode);
 
-	setTimeout(() => {
-		console.log(editor);
-	}, 2000);
+	let editorElement = useRef();
 
 	function runHandler() {
-		// const code: string = valueGetter.current();
+		const code = editorElement.current.getContent();
+
 		execute(code, language);
+	}
+
+	function langChangeHandler(event) {
+		setLanguage(event.target.value);
+		setCode(getTemplateCode(event.target.value));
 	}
 
 	return (
@@ -55,7 +55,7 @@ const App = () => {
 									<div className="field">
 										<div className="control">
 											<Editor
-												ref={editorRef}
+												ref={editorElement}
 												code={code}
 												language={language}
 												theme={theme}
@@ -64,7 +64,7 @@ const App = () => {
 												<select
 													id="lang"
 													defaultValue="python3"
-													onChange={getTemplateCode}
+													onChange={langChangeHandler}
 												>
 													<option>ballerina</option>
 													<option>bash</option>

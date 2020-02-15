@@ -6,7 +6,7 @@ export function execute(code, language) {
 		code: code,
 		lang: language,
 	});
-	// console.log(data);
+	console.log(data);
 	fetch('/run', {
 		// http://localhost:8000/hello
 		// /run
