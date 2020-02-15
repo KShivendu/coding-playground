@@ -1,78 +1,73 @@
+// Execute the code in the box
+export function execute() {
+	document.querySelector('#execute').classList.add('is-loading');
 
-  
-  // Execute the code in the box
-  export function execute() {
-    document.querySelector("#execute").classList.add("is-loading");
-  
-    let data = JSON.stringify({
-      code: document.querySelector("#code").value,
-      lang: document.querySelector("#lang").value
-    });
-    // console.log(data);
-    fetch("/run", {
-      // http://localhost:8000/hello
-      // /run
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8"
-      },
-      body: data
-    }).then(response => {
-      if (response.ok) {
-        response.text().then(result => {
-          let parsed = JSON.parse(result);
-          let status = "";
-          let title = "";
-          if (parsed.status === "success") {
-            title = "Output";
-            status = "is-success";
-          } else if (parsed.status === "error") {
-            title = "Error";
-            status = "is-danger";
-          }
-          console.log(title, parsed.text, status);
-          document.querySelector("#output").innerHTML = parsed.text;
-        });
-      } else {
-        console.log("Error!", "SERVER ERROR", "is-warning");
-      }
-      document.querySelector("#execute").classList.remove("is-loading");
-    });
-  }
-  
-  
-  
-  
- export function changeTemplate() {
-    // This function can change the content of the #code element according to language chosen
-    const lang = document.querySelector("#lang").value;
-    let sampleCode = "Write your code here !!";
-    if (lang === "python3") {
-      sampleCode = `
+	let data = JSON.stringify({
+		code: document.querySelector('#code').value,
+		lang: document.querySelector('#lang').value,
+	});
+	// console.log(data);
+	fetch('/run', {
+		// http://localhost:8000/hello
+		// /run
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json; charset=UTF-8',
+		},
+		body: data,
+	}).then(response => {
+		if (response.ok) {
+			response.text().then(result => {
+				let parsed = JSON.parse(result);
+				let status = '';
+				let title = '';
+				if (parsed.status === 'success') {
+					title = 'Output';
+					status = 'is-success';
+				} else if (parsed.status === 'error') {
+					title = 'Error';
+					status = 'is-danger';
+				}
+				console.log(title, parsed.text, status);
+				document.querySelector('#output').innerHTML = parsed.text;
+			});
+		} else {
+			console.log('Error!', 'SERVER ERROR', 'is-warning');
+		}
+		document.querySelector('#execute').classList.remove('is-loading');
+	});
+}
+
+export function changeTemplate() {
+	// This function can change the content of the #code element according to language chosen
+	const lang = document.querySelector('#lang').value;
+	let sampleCode = 'Write your code here !!';
+	if (lang === 'python3') {
+		sampleCode = `
   import re
   def main():
       hello = "Hello World!"
-      sub = re.sub("W\w*", "Sandbox", hello)
+      sub = re.sub("W\\w*", "Sandbox", hello)
       print(sub)
   
   main()
   `;
-    } else if (lang === "cpp" || lang === "cpp11") {
-      sampleCode = `
+	} else if (lang === 'cpp' || lang === 'cpp11') {
+		sampleCode = `
 #include <bits/stdc++.h>
 using namespace std;\n
 int main(){
 \t cout << "Hello World" << endl;
 }`;
-    } else if (lang === "nodejs" || lang === "javascript") {
-      sampleCode = `
+	} else if (lang === 'nodejs' || lang === 'javascript') {
+		sampleCode = `
 console.log("Hello World");
 `;
-    }
-  
-    document.querySelector("#code").value = sampleCode;
-  }
-  
+	}
+
+	document.querySelector('#code').value = sampleCode;
+}
+
 //   const languageExample_URLS = [
 //     "https://repl.it/data/languages/python3/examples",
 //     "https://repl.it/data/languages/nodejs/examples",
@@ -133,5 +128,3 @@ console.log("Hello World");
 //     "https://repl.it/data/languages/bloop/examples",
 //     "https://repl.it/data/languages/unlambda/examples"
 //   ];
-  
-
