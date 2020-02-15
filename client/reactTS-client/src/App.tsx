@@ -1,8 +1,7 @@
-import React, { useRef, MutableRefObject, useState } from 'react';
-// import './App.css';
+import React, { useRef, useState } from 'react';
 import { execute, changeTemplate } from './script.js';
 import Editor from '@monaco-editor/react';
-import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
+// import './App.css';
 
 type theme = 'dark' | 'light';
 
