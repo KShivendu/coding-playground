@@ -1,8 +1,9 @@
 import React from 'react';
 // import './App.css';
 import { execute, changeTemplate } from './script.js';
-// import Editor from './components/Editor';
 import Editor from '@monaco-editor/react';
+
+type theme = 'dark' | 'light';
 
 const defaultCode = `import re 
 import socket    
@@ -19,6 +20,8 @@ def main():
 main()`;
 
 const App = () => {
+	let theme: theme = window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark';
+
 	return (
 		<div>
 			<section className="hero is-light">
@@ -41,8 +44,9 @@ const App = () => {
 											<Editor
 												height="80vh"
 												width="70vw"
-												theme="dark"
-												language="javascript"
+												value={defaultCode}
+												theme={theme}
+												language="python"
 											></Editor>
 											<div className="select">
 												<select
