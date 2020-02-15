@@ -1,10 +1,10 @@
 // Execute the code in the box
-export function execute() {
+export function execute(code, language) {
 	document.querySelector('#execute').classList.add('is-loading');
 
 	let data = JSON.stringify({
-		code: document.querySelector('#code').value,
-		lang: document.querySelector('#lang').value,
+		code: code,
+		lang: language,
 	});
 	// console.log(data);
 	fetch('/run', {

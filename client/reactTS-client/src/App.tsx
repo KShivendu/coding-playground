@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef, MutableRefObject, useState } from 'react';
 // import './App.css';
 import { execute, changeTemplate } from './script.js';
 import Editor from '@monaco-editor/react';
+import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 
 type theme = 'dark' | 'light';
 
@@ -21,6 +22,19 @@ main()`;
 
 const App = () => {
 	let theme: theme = window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark';
+	const [isEditorReady, setIsEditorReady] = useState(false);
+	const valueGetter: any = useRef();
+	let language = 'python';
+
+	function handleEditorDidMount(_valueGetter: any) {
+		setIsEditorReady(true);
+		valueGetter.current = _valueGetter;
+	}
+
+	function runHandler() {
+		const code: string = valueGetter.current();
+		execute(code, language);
+	}
 
 	return (
 		<div>
@@ -45,8 +59,9 @@ const App = () => {
 												height="80vh"
 												width="70vw"
 												value={defaultCode}
+												editorDidMount={handleEditorDidMount}
 												theme={theme}
-												language="python"
+												language={language}
 											></Editor>
 											<div className="select">
 												<select
@@ -116,7 +131,7 @@ const App = () => {
 											<button
 												id="execute"
 												className="button is-primary is-fullwidth"
-												onClick={execute}
+												onClick={runHandler}
 											>
 												Run
 											</button>
