@@ -30,4 +30,28 @@ location /run {
 }
 ```
 
+Remember that to expose docker for xterm you will have to make following changes in 
+/etc/systemd/system/multi-user.target.wants/docker.service
+use
+`ExecStart=/usr/bin/dockerd -H tcp://localhost -H fd:// --containerd=/run/containerd/containerd.sock`
+<!-- -H tcp://10.3.7.86 can also be used -->
 
+Now kill the existing process
+ps axf | grep docker | grep -v grep | awk '{print "kill -9 " $1}' | sudo sh 
+
+# Reload daemon configuration for systemctl
+
+systemctl daemon-reload
+
+Then restart dockerd with systemctl
+
+sudo systemctl start docker
+
+You can verify the ports with :
+sudo netstat -tulpn | grep LISTEN
+or 
+docker -H tcp://localhost ps
+
+
+Install certbox from
+https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx

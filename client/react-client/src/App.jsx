@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { execute, getTemplateCode } from './script.js';
 import Editor from './components/Editor';
+import XtermComp from "./components/XtermComp";
+
 // import './App.css';
 
 const defaultCode = `import re 
@@ -52,6 +54,7 @@ const App = () => {
 						<div className="column">
 							<section className="section">
 								<div className="container">
+									<XtermComp/>
 									<div className="field">
 										<div className="control">
 										<div className="select">
