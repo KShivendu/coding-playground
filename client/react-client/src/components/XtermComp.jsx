@@ -23,7 +23,9 @@ export default class XtermComp extends Component {
   render() {
     return (
       <div>
-        <div id="terminal">Terminal</div>
+        <div id="terminal">
+           {/* Terminal */}
+        </div>
       </div>
     );
   }

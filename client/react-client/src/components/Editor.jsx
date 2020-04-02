@@ -19,7 +19,7 @@ export default function Editor(props, ref) {
 	return (
 		<MonacoEditor
 			height="80vh"
-			width="70vw"
+			width="100vw"
 			value={props.code}
 			editorDidMount={handleEditorDidMount}
 			theme={props.theme}
