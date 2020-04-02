@@ -120,15 +120,11 @@ const App = () => {
               </div>
 
               <div className="column">
-                <section className="section">
                   <div id="notifications" className="container"></div>
-                </section>
               </div>
 
               <div className="column">
-                <section className="section">
                   <div id="output" className="output"></div>
-                </section>
               </div>
             </div>
           </div>
