@@ -52,7 +52,7 @@ const App = () => {
                   <div className="control">
                     <div className="columns">
                       <div className="column">
-                        <div className="select">
+                        <div className="select is-dark">
                           <select
                             id="lang"
                             defaultValue="python3"
