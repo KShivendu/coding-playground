@@ -4,7 +4,7 @@ This is an coding playground built with JS, Bulma CSS, Docker and Python.
 
 ## Setup
 
-- Run `setup.sh` to install dependencies (configured for Ubuntu 18.04)
+- Run `server-setup.sh` to install dependencies (configured for Ubuntu 18.04)
 - Create a virtual environment
 - Install flask, gunicorn, and the python docker library in the virtual environment
 - Run `start-gunicorn.sh` to run

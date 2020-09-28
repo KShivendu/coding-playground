@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Requires sudo permission
-
 # Installs docker and other basic software requirements 
 
 USER=vagrant

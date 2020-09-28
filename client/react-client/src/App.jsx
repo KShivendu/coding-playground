@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { execute, getTemplateCode } from "./script.js";
 import Editor from "./components/Editor";
-import XtermComp from "./components/XtermComp";
-
+// import XtermComp from "./components/XtermComp";
 // import './App.css';
 
 const defaultCode = `import re 
@@ -16,7 +15,6 @@ def main():
     hello = "Hello World!"
     sub = re.sub("W\\w*", "Sandbox", hello)
     print(sub)
-
 main()`;
 
 const App = () => {
@@ -47,7 +45,7 @@ const App = () => {
             <div className="columns">
               <div className="column">
                 <h1 className="title ">Coding Playground</h1>
-                <h2 className="subtitle ">A little sandbox, just for fun</h2>
+                <h2 className="subtitle ">A little sandbox</h2>
                 <div className="field">
                   <div className="control">
                     <div className="columns">
