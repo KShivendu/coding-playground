@@ -2,9 +2,7 @@ import docker
 
 def dockerSetup(imageName):
     """ Pulls the python image if it's not here and returns docker client
-
         imageName: A string with the name of the image
-
         returns: docker client
     """
     client = docker.from_env()

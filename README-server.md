@@ -1,6 +1,6 @@
-# Python Sandbox
+# Sandbox server
 
-This is an online python playground built with Javascript, Bulma CSS, Docker, and Python 3. Built to run on Ubuntu 18.04, but it'll run on anything, really.
+This is an coding playground built with JS, Bulma CSS, Docker and Python.
 
 ## Setup
 

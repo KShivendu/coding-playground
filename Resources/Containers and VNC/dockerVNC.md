@@ -1,7 +1,7 @@
 http://wiki.ros.org/docker/Tutorials/GUI
 
 
-# My analysis from polygott docker container
+# My understanding of polygott docker container
 root@93c7b88c0d85:/home/runner# netstat -tulpn | grep LISTEN
 tcp        0      0 0.0.0.0:5900            0.0.0.0:*               LISTEN      22/x11vnc           
 tcp6       0      0 :::5900                 :::*                    LISTEN      22/x11vnc
