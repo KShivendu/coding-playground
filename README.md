@@ -1,5 +1,5 @@
 # Coding Playground
-- A coding playground(restricted to python from server) made for learning by [Me](https://github.com/KShivendu) and [Ambar](https://github.com/supercoww)
+- A Docker based coding playground made by [KShivendu](https://github.com/KShivendu) and [SuperCoww](https://github.com/supercoww)
 
 ## Tech Stack
 - React
