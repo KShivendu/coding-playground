@@ -8,8 +8,6 @@ export function execute(code, language) {
 	});
 	console.log(data);
 	fetch('/run', {
-		// http://localhost:8000/hello
-		// /run
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json; charset=UTF-8',
@@ -43,13 +41,13 @@ export function getTemplateCode(lang) {
 	let sampleCode = 'Write your code here !!';
 	if (lang === 'python3') {
 		sampleCode = `
-  import re
-  def main():
-      hello = "Hello World!"
-      sub = re.sub("W\\w*", "Sandbox", hello)
-      print(sub)
-  
-  main()
+import re
+def main():
+	hello = "Hello World!"
+	sub = re.sub("W\\w*", "Sandbox", hello)
+	print(sub)
+
+main()
   `;
 	} else if (lang === 'cpp' || lang === 'cpp11') {
 		sampleCode = `
