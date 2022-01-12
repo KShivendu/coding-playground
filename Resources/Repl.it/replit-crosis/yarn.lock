@@ -55,11 +55,12 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@replit/crosis@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@replit/crosis/-/crosis-2.3.0.tgz#49464238e4ae37829364c5d4b77d3c88b366b652"
-  integrity sha512-c+Zh9NoMYtY/89t60Ab92pfhEBmVOd10WKaoeHKHmP88qA/ahLLW9nLU8XY5mOEfoTzEAtQDzNq0aIrK/hGxRQ==
+"@replit/crosis@^7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@replit/crosis/-/crosis-7.3.1.tgz#1973cd33305b8a719a5f80db0a441ea66630dd99"
+  integrity sha512-A9WGjD/c2JXw5NVLBjUPkF4fyR0XMNnMKzqyCiT851q4RZEGPIcT4evvIzJOYoejiEIVNt4C3TZnUrGrEmxlzw==
   dependencies:
+    abortcontroller-polyfill "^1.5.0"
     engine.io-client "^3.4.0"
 
 "@replit/protocol@^0.2.2":
@@ -78,6 +79,11 @@
   version "10.17.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.14.tgz#b6c60ebf2fb5e4229fdd751ff9ddfae0f5f31541"
   integrity sha512-G0UmX5uKEmW+ZAhmZ6PLTQ5eu/VPaT+d/tdLd5IFsKRPcbe6lPxocBtcYBFSaLaCW8O60AX90e91Nsp8lVHCNw==
+
+abortcontroller-polyfill@^1.5.0:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/abortcontroller-polyfill/-/abortcontroller-polyfill-1.7.3.tgz#1b5b487bd6436b5b764fd52a612509702c3144b5"
+  integrity sha512-zetDJxd89y3X99Kvo4qFx8GKlt6GsvN3UcRZHwU6iFA/0KiOmhkTVhe8oRoTBiTVPZu09x3vCra47+w8Yz1+2Q==
 
 after@0.8.2:
   version "0.8.2"
